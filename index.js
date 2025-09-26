@@ -40,6 +40,11 @@ app.get("/chats", async (req, res) => {
   res.render("index.ejs", { chats });
 });
 
+//new route
+app.get("/chat/new", (req, res) => {
+  res.render("new.ejs");
+});
+
 app.listen(8080, () => {
   console.log("server is running");
 });

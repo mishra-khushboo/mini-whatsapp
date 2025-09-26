@@ -4,6 +4,7 @@ body {
 .chat {
   background-color: aliceblue;
   padding: 20px;
+  display: inline-block;
 }
 .msg {
   background-color: rgb(172, 207, 237);
