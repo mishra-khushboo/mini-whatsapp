@@ -66,6 +66,13 @@ app.post("/chats", (req, res) => {
   res.redirect("/chats");
 });
 
+//EDIT ROUTE
+app.get("/chats/:id/edit", async (req, res) => {
+  let { id } = req.params;
+  let Chat = await chat.findById(id);
+  res.render("edit.ejs", { Chat });
+});
+
 app.listen(8080, () => {
   console.log("server is running");
 });
