@@ -84,7 +84,13 @@ app.put("/chats/:id", async (req, res) => {
     { msg: msg },
     { runValidators: true, new: true }
   );
-  console.log(updatedChat);
+  //console.log(updatedChat);
+  res.redirect("/chats");
+});
+//delete route
+app.delete("/chats/:id", async (req, res) => {
+  let { id } = req.params;
+  let deletedchat = await chat.findByIdAndDelete(id);
   res.redirect("/chats");
 });
 
